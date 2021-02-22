@@ -1,0 +1,79 @@
+
+cascade — it means that the order of CSS rules matter;
+ when two rules apply that have equal specificity 
+ the one that comes last in the CSS is the one that will be used.
+ 
+ In the below example, we have two rules that could apply to the h1.
+ The h1 ends up being colored blue — these rules have an identical
+ selector and therefore carry the same specificity, so the last one 
+ in the source order wins.
+ 
+<!-- 
+ example 
+ h1 { 
+    color: red; 
+}
+h1 { 
+    color: blue; 
+}
+    
+	<h1>This is my heading.</h1> 
+	
+	
+	o/p : in blue color
+-->
+ 
+ 
+ 
+ 
+ 
+Specificity:  Specificity is how the browser decides which rule applies if multiple
+  rules have different selectors, but could still apply to the same element.
+  It is basically a measure of how specific a selector's selection will be:
+
+An element selector is less specific — it will select all elements of that
+  type that appear on a page — so will get a lower score.
+  
+A class selector is more specific — it will select only the elements on a
+ page that have a specific class attribute value — so will get a higher score.
+ 
+ 
+<!-- 
+ .main-heading { 
+    color: red; 
+}
+        
+h1 { 
+    color: blue; 
+}
+
+<h1 class="main-heading">This is my heading.</h1>
+
+o/p : red color
+-->
+
+
+
+Inheritance
+Inheritance also needs to be understood in this context — 
+some CSS property values set on parent elements are inherited
+ by their child elements, and some aren't.
+
+For example, if you set a color and font-family on an element, 
+every element inside it will also be styled with that color and font,
+ unless you've applied different color and font values directly to them.
+ 
+ 
+<!--
+ body {
+    color: blue;
+}
+
+span {
+    color: black;
+}
+    
+	
+<p>As the body has been set to have a color of blue this is inherited through the descendants.</p>
+<p>We can change the color by targetting the element with a selector, such as this <span>span</span>.</p>	
+ -->
